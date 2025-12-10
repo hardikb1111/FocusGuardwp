@@ -1,1 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Focus Guard – Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #020617;
+      --accent: #667eea;
+      --accent-soft: rgba(102, 126, 234, 0.12);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(148, 163, 184, 0.35);
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.7);
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background:
+        radial-gradient(circle at top left, #1f2933 0, transparent 50%),
+        radial-gradient(circle at bottom right, #111827 0, transparent 50%),
+        linear-gradient(135deg, #020617, #020617 60%, #020617);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 860px;
+      background: radial-gradient(circle at top left, #020617 0, #020617 55%, #020617);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(102, 126, 234, 0.35), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(118, 75, 162, 0.3), transparent 60%);
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      padding: 28px 26px 26px 26px;
+    }
+
+    @media (min-width: 768px) {
+      .content {
+        padding: 34px 38px 32px 38px;
+      }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-muted);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #22c55e 0, #15803d 70%);
+      box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.18);
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(26px, 3vw, 32px);
+      letter-spacing: -0.03em;
+      color: #f9fafb;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h1 span.logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 30% 0, #e5e7eb, #c7d2fe 16%, #4f46e5 55%, #3730a3 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: #0b1020;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.55);
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .meta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #4f46e5;
+    }
+
+    .grid {
+      margin-top: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        margin-top: 26px;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 22px;
+      }
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card.accent {
+      background: radial-gradient(circle at top left, #020617 0, #020617 45%, #020617);
+      border-color: rgba(129, 140, 248, 0.8);
+    }
+
+    .card h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #e5e7eb;
+      letter-spacing: -0.01em;
+    }
+
+    .card p,
+    .card li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 6px;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(129, 140, 248, 0.9);
+    }
+
+    strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    code {
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      color: #c7d2fe;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .label-pill {
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(55, 65, 81, 0.95);
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(31, 41, 55, 0.95);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+    }
+
+    .footer a {
+      color: #a5b4fc;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="content">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>Privacy-first browser extension</span>
+      </div>
+
+      <h1>
+        <span class="logo">FG</span>
+        Focus Guard – Privacy Policy
+      </h1>
+
+      <p class="subtitle">
+        Focus Guard is designed to protect your attention, not to track you. This document explains in clear terms
+        how the extension handles your data.
+      </p>
+
+      <div class="meta">
+        <div class="meta-item">
+          <span class="meta-dot"></span>
+          <span>Last updated: 10 December 2025</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-dot"></span>
+          <span>Applies to: Chrome extension “Focus Guard – Block Shorts &amp; Reels”</span>
+        </div>
+      </div>
+
+      <section class="grid">
+        <article class="card accent">
+          <div class="label">
+            <span class="label-pill">1. Data collection</span>
+          </div>
+          <h2>We do not collect personal data</h2>
+          <p>
+            Focus Guard runs entirely in your browser. It does not send any information to external servers and does
+            not integrate with any analytics or advertising platforms.
+          </p>
+          <ul>
+            <li><strong>No account</strong> is required and no authentication data is used.</li>
+            <li><strong>No browsing history</strong> is collected, stored, or transmitted.</li>
+            <li><strong>No personal identifiers</strong> such as name, email, or IP address are collected.</li>
+            <li><strong>No content</strong> from the pages you visit is uploaded or analyzed remotely.</li>
+          </ul>
+          <p style="margin-top: 8px;">
+            All logic for blocking YouTube Shorts and Instagram Reels runs locally inside the extension.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">
+            <span class="label-pill">2. Local storage</span>
+          </div>
+          <h2>What is stored on your device</h2>
+          <p>
+            Focus Guard uses the browser’s local storage only to remember your settings and counters:
+          </p>
+          <ul>
+            <li>Whether blocking is enabled for <strong>YouTube Shorts</strong>.</li>
+            <li>Whether blocking is enabled for <strong>Instagram Reels</strong>.</li>
+            <li>Simple numeric counters for how many times content was blocked.</li>
+          </ul>
+          <p style="margin-top: 8px;">
+            This information is stored <strong>only in your browser</strong>. You can reset it at any time from the
+            extension popup or by clearing your browser data.
+          </p>
+        </article>
+      </section>
+
+      <section class="grid" style="margin-top: 22px;">
+        <article class="card">
+          <div class="label">
+            <span class="label-pill">3. Permissions</span>
+          </div>
+          <h2>Why the extension requests certain permissions</h2>
+          <ul>
+            <li>
+              <strong><code>"tabs"</code></strong> – used only to detect when the current tab is on a YouTube or
+              Instagram URL so the extension can apply blocking rules. The extension does not read full browsing
+              history or page content.
+            </li>
+            <li>
+              <strong><code>"storage"</code></strong> – used to store your on/off preferences and local block counters.
+              This data never leaves your device.
+            </li>
+            <li>
+              <strong>Host permissions for YouTube and Instagram</strong> – required to inject a content script that
+              hides or disables Shorts/Reels UI elements on those sites. The script only manipulates layout; it does
+              not scrape or transmit data.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="label">
+            <span class="label-pill">4. Data sharing</span>
+          </div>
+          <h2>No data is shared with third parties</h2>
+          <p>
+            Focus Guard does not share any data with third parties. Specifically:
+          </p>
+          <ul>
+            <li>No data is sold, rented, or traded.</li>
+            <li>No data is sent to external APIs or remote databases.</li>
+            <li>No integrations with ad networks or tracking pixels are used.</li>
+          </ul>
+          <p style="margin-top: 8px;">
+            If this ever changes in a future version, this policy will be updated before any new data use begins.
+          </p>
+        </article>
+      </section>
+
+      <section class="grid" style="margin-top: 22px;">
+        <article class="card">
+          <div class="label">
+            <span class="label-pill">5. Children &amp; sensitive data</span>
+          </div>
+          <h2>No profiling or sensitive data</h2>
+          <p>
+            The extension does not create user profiles and does not attempt to infer interests, demographics, or
+            other characteristics. It does not process any sensitive categories of data such as financial information,
+            health data, or information about children.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">
+            <span class="label-pill">6. Contact</span>
+          </div>
+          <h2>Questions about this policy</h2>
+          <p>
+            If you have questions or concerns about how Focus Guard handles data, you can contact the developer using
+            the support link on the Chrome Web Store listing.
+          </p>
+          <p style="margin-top: 8px;">
+            When you contact the developer, any information you choose to provide will be used only for responding to
+            your inquiry.
+          </p>
+        </article>
+      </section>
+
+      <div class="footer">
+        <span>Focus Guard – Block Shorts &amp; Reels</span>
+        <span>This extension is designed to improve focus by blocking distracting short-form video content without tracking you.</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
